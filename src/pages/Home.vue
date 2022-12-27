@@ -4,6 +4,6 @@ import Page from '../components/layout/Page.vue';
 
 <template>
     <page>
-        <template #title>Movie</template>
+        <template #title>Home</template>
     </page>
 </template>
