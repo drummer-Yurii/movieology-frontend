@@ -1,6 +1,6 @@
 import { Tab } from "../types";
 
-export const tabs: Tab[] = [
+export const tabsMock: Tab[] = [
     {
         title: 'All',
         id: '1',
