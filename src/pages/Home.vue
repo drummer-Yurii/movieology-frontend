@@ -12,24 +12,21 @@ const onTabChange = (tabId: string) => {
     activeTab.value = tabId
 }
 </script>
-
 <template>
-    <page>
-        <template #title>Home</template>
-        <div>
-            <tabs 
-                :tabs="tabsMock" 
-                :active-tab="activeTab" 
-                @on-tab-change="onTabChange" 
-            />
-        </div>
-        <div class="flex">
+    <page paddingless>
+        <template #title> Movie </template>
+        <div class="mx-4">
+            <tabs :tabs="tabsMock" :active-tab="activeTab" @on-tab-change="onTabChange" />
             <content-row>
-            <main-banner />
-            <div class="ml-10 max-w-md w-full">
-                <flash-news />
-            </div>
+                <main-banner />
+                <div class="ml-10 max-w-md w-full">
+                    <flash-news />
+                </div>
             </content-row>
         </div>
+        <content-row class="flex-col">
+            <h1 class="mx-4 text-2xl text-white font-bold">Special for you</h1>
+            <movie-feed />
+        </content-row>
     </page>
 </template>
