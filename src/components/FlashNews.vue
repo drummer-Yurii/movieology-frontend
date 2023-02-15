@@ -1,11 +1,12 @@
 <script setup lang="ts">
-
+import { flashNews } from '../mocks/news';
+import Stack from './Stack.vue';
 
 </script>
 <template>
-    <div class="banner flex p-8 w-[40%]">
-        
-    </div>
+    <stack>
+
+    </stack>
 </template>
 
 
