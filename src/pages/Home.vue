@@ -26,7 +26,7 @@ const onTabChange = (tabId: string) => {
         <div class="flex">
             <content-row>
             <main-banner />
-            <div class="ml-6 max-w-md w-full">
+            <div class="ml-10 max-w-md w-full">
                 <flash-news />
             </div>
             </content-row>
