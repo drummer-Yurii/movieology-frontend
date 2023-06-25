@@ -4,6 +4,7 @@ import Page from '../components/layout/Page.vue';
 import Tabs from '../components/Tabs.vue';
 import MainBanner from '../components/MainBanner.vue';
 import FlashNews from '../components/FlashNews.vue';
+import MovieFeed from '../components/MovieFeed.vue';
 import ContentRow from '../components/ContentRow.vue';
 import { tabsMock } from '../mocks/tabs';
 
@@ -27,6 +28,10 @@ const onTabChange = (tabId: string) => {
         <content-row class="flex-col">
             <h1 class="mx-4 text-2xl text-white font-bold">Special for you</h1>
             <movie-feed />
+        </content-row>
+        <content-row>
+            <h1 class="text-2xl text-white font-bold">Special for you</h1>
+            <movie-feed></movie-feed>
         </content-row>
     </page>
 </template>
