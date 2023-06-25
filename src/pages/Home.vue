@@ -17,7 +17,11 @@ const onTabChange = (tabId: string) => {
     <page paddingless>
         <template #title> Movie </template>
         <div class="mx-4">
-            <tabs :tabs="tabsMock" :active-tab="activeTab" @on-tab-change="onTabChange" />
+            <tabs
+                :tabs="tabsMock" 
+                :active-tab="activeTab" 
+                @on-tab-change="onTabChange" 
+            />
             <content-row>
                 <main-banner />
                 <div class="ml-10 max-w-md w-full">
