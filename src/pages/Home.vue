@@ -29,9 +29,5 @@ const onTabChange = (tabId: string) => {
             <h1 class="mx-4 text-2xl text-white font-bold">Special for you</h1>
             <movie-feed />
         </content-row>
-        <content-row>
-            <h1 class="text-2xl text-white font-bold">Special for you</h1>
-            <movie-feed></movie-feed>
-        </content-row>
     </page>
 </template>
