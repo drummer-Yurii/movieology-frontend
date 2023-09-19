@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps<{
   isActive: boolean
@@ -17,28 +17,30 @@ const updateTimeBar = (event: Event) => {
   emits('on-time-change', timeBar.value)
 }
 
-const skip = () => {}
+const calculateTime = (duration: number) => {
+  const seconds = Math.floor(duration % 60)
+  const minutes = Math.floor(duration / 60)
+  const computedSeconds = seconds >= 10 ? seconds : `0 ${seconds}`
+  return `${minutes}:${computedSeconds}`
+}
 
-onMounted(() => {
-  window.addEventListener('keydown', skip)
-})
-onUnmounted(() => {
-  window.removeEventListener('keydown', skip)
-})
+const currentTime = computed(() => calculateTime(props.currentVideoPosition))
+const timeTotal = computed(() => calculateTime(props.videoDuration))
 </script>
 
 <template>
   <div class="controls" v-bind="$attrs">
-    <time>00:00</time>
+    <time>{{ currentTime }}</time>
     <input
       type="range"
       class="time-track"
       :min="0"
+      step="10"
       :max="videoDuration"
       :value="currentVideoPosition"
       @change="updateTimeBar"
     />
-    <time>00:00</time>
+    <time>{{ timeTotal }}</time>
   </div>
 </template>
 

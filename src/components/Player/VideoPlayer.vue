@@ -20,6 +20,7 @@ const progress = () => {
 
 const onTimeChange = (value: number) => {
     video.value.currentTime = value
+    progress()
 }
 </script>
 
