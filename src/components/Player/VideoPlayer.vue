@@ -19,8 +19,8 @@ const progress = () => {
 }
 
 const onTimeChange = (value: number) => {
-    video.value.currentTime = value
-    progress()
+  video.value.currentTime = value
+  progress()
 }
 </script>
 
@@ -36,6 +36,7 @@ const onTimeChange = (value: number) => {
       type="video/mp4"
       @loadedmetadata="setVideoData"
       @progress="progress"
+      @timeupdate="progress"
     />
     <time-control
       :video-duration="videoDuration"
