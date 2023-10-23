@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TimeControl from './TimeControl.vue'
+import VolumeControl from './VolumeControl.vue';
 
 const videoDuration = ref<number>(0)
 const videoCurrentTime = ref<number>(0)
@@ -21,6 +22,10 @@ const progress = () => {
 const onTimeChange = (value: number) => {
   video.value.currentTime = value
   progress()
+}
+
+const onVolumeChange = (value: number) => {
+  video.value.volume = value
 }
 </script>
 
@@ -44,7 +49,7 @@ const onTimeChange = (value: number) => {
       :is-active="true"
       @on-time-change="onTimeChange"
     />
-    <volume-control />
+    <volume-control @on-volume-change="onVolumeChange" />
   </div>
 </template>
 

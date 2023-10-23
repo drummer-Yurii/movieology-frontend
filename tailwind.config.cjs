@@ -8,6 +8,9 @@ module.exports = {
         "movie-black-200": "#1f2326",
         "movie-black-400": "#282c31",
         "oranje": "#f37515"
+      },
+      rotate: {
+        270: '270deg'
       }
     },
   },
